@@ -1,0 +1,2316 @@
+/* ==========================================================================
+   TalentScope Individual Learning Workspace
+   Strictly adheres to the Home, Skill, Market & Job Intelligence design system
+   Brand Tokens: #B22DEF (Primary), #42075D (Deep Purple), #8B3DFF, #19B77A, #F59E0B
+   ========================================================================== */
+
+.learning-page {
+  --lp-ink: #241b30;
+  --lp-muted: #71677c;
+  --lp-soft-muted: #968ba1;
+  --lp-purple: #B22DEF;
+  --lp-deep: #42075D;
+  --lp-secondary: #8B3DFF;
+  --lp-wash: #F8F6FC;
+  --lp-surface: #FFFFFF;
+  --lp-light-purple: #F3E9FF;
+  --lp-border: #e7d9f5;
+  --lp-border-glass: rgba(178, 45, 239, 0.16);
+  --lp-shadow-card: 0 8px 24px rgba(66, 7, 93, 0.055);
+  --lp-shadow-glow: 0 8px 24px rgba(178, 45, 239, 0.14);
+  --lp-positive: #19B77A;
+  --lp-negative: #E05252;
+  --lp-attention: #F59E0B;
+  --lp-cyan: #06B6D4;
+
+  width: 100%;
+  max-width: 1440px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 8px 0 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  color: var(--lp-ink);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background: radial-gradient(ellipse at 95% 0%, rgba(178, 45, 239, 0.055), transparent 35%);
+  animation: lp-enter 0.35s ease-out both;
+  overflow-x: hidden;
+}
+
+.learning-page *,
+.learning-page *::before,
+.learning-page *::after {
+  box-sizing: border-box;
+}
+
+.learning-page button,
+.learning-page input,
+.learning-page select {
+  font: inherit;
+}
+
+.learning-page button {
+  cursor: pointer;
+}
+
+.learning-page button:focus-visible,
+.learning-page input:focus-visible,
+.learning-page select:focus-visible,
+.learning-page a:focus-visible {
+  outline: 2px solid var(--lp-purple) !important;
+  outline-offset: 2px !important;
+}
+
+.learning-page [hidden] {
+  display: none !important;
+}
+
+.learning-page h1,
+.learning-page h2,
+.learning-page h3,
+.learning-page h4,
+.learning-page p {
+  margin-top: 0;
+}
+
+@keyframes lp-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lp-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+}
+
+/* --------------------------------------------------------------------------
+   PAGE HEADING
+   -------------------------------------------------------------------------- */
+.lp-page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 4px 2px;
+}
+
+.lp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lp-purple);
+  margin-bottom: 4px;
+}
+
+.lp-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.lp-page-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--lp-deep);
+  margin: 0;
+}
+
+.lp-demo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  background: var(--lp-wash);
+  border: 1px solid var(--lp-border);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--lp-deep);
+}
+
+.lp-demo-badge .pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lp-positive);
+  box-shadow: 0 0 6px var(--lp-positive);
+  animation: lp-pulse 2s infinite ease-in-out;
+}
+
+.lp-page-subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--lp-muted);
+  max-width: 720px;
+}
+
+.lp-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   BUTTON SYSTEM (Matches Home, Skill, Market, Career)
+   -------------------------------------------------------------------------- */
+.lp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 18px;
+  background: var(--lp-purple);
+  color: #FFFFFF !important;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.lp-btn-primary:hover {
+  background: #FFFFFF;
+  color: var(--lp-purple) !important;
+  border-color: var(--lp-purple);
+  box-shadow: 0 4px 14px rgba(178, 45, 239, 0.16);
+}
+
+.lp-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.lp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 16px;
+  background: #FAF5FF;
+  color: var(--lp-deep) !important;
+  border: 1px solid var(--lp-border);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.lp-btn-secondary:hover {
+  background: var(--lp-light-purple);
+  color: var(--lp-purple) !important;
+  border-color: #d8bdf2;
+}
+
+.lp-btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.lp-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  color: var(--lp-deep);
+  border: 1px solid var(--lp-border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lp-btn-outline:hover {
+  background: #FAF5FF;
+  border-color: var(--lp-purple);
+  color: var(--lp-purple);
+}
+
+.lp-btn-sm {
+  padding: 5px 12px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   LIQUID GLASS / FROSTED REFRACTION PANELS
+   -------------------------------------------------------------------------- */
+.lp-glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(178, 45, 239, 0.14);
+  border-radius: 16px;
+  box-shadow: var(--lp-shadow-card);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lp-glass-card:hover {
+  border-color: rgba(178, 45, 239, 0.26);
+  box-shadow: 0 10px 28px rgba(66, 7, 93, 0.08);
+}
+
+.lp-surface-card {
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+  border-radius: 16px;
+  box-shadow: var(--lp-shadow-card);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION HEADERS
+   -------------------------------------------------------------------------- */
+.lp-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.lp-section-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lp-section-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lp-purple);
+}
+
+.lp-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--lp-deep);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lp-section-desc {
+  font-size: 13px;
+  color: var(--lp-muted);
+  margin: 2px 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   ACTIVE ROADMAP HERO (STEP 5)
+   -------------------------------------------------------------------------- */
+.lp-hero-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 246, 252, 0.85));
+  border: 1px solid rgba(178, 45, 239, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.lp-hero-card::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(178, 45, 239, 0.09), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.lp-hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.lp-hero-identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.lp-hero-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--lp-purple), var(--lp-deep));
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(178, 45, 239, 0.28);
+}
+
+.lp-hero-icon-box svg {
+  width: 26px;
+  height: 26px;
+}
+
+.lp-hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lp-hero-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.lp-pill-goal {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background: #FAF5FF;
+  border: 1px solid #e7d9f5;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--lp-deep);
+}
+
+.lp-pill-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background: rgba(25, 183, 122, 0.1);
+  border: 1px solid rgba(25, 183, 122, 0.25);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--lp-positive);
+}
+
+.lp-pill-target {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1D4ED8;
+}
+
+.lp-hero-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--lp-deep);
+  margin: 0;
+}
+
+.lp-hero-summary {
+  font-size: 13px;
+  color: var(--lp-muted);
+  max-width: 680px;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.lp-hero-progress-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.lp-progress-huge {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--lp-purple);
+  line-height: 1;
+}
+
+.lp-progress-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lp-muted);
+}
+
+.lp-progress-est {
+  font-size: 11px;
+  color: var(--lp-soft-muted);
+}
+
+.lp-progress-track {
+  width: 100%;
+  height: 8px;
+  background: #E8DDF0;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.lp-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--lp-purple), #D46CFF);
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Hero Step Preview & Actions */
+.lp-hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(178, 45, 239, 0.12);
+  flex-wrap: wrap;
+}
+
+.lp-hero-steps-preview {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.lp-step-mini-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lp-step-mini-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lp-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lp-step-mini-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lp-deep);
+}
+
+.lp-hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lp-hero-simulator-select {
+  padding: 6px 12px;
+  background: #FFFFFF;
+  border: 1px solid var(--lp-border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lp-deep);
+  cursor: pointer;
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   NO ACTIVE ROADMAP EMPTY STATE (STEP 6)
+   -------------------------------------------------------------------------- */
+.lp-empty-state-card {
+  padding: 48px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(180deg, #FFFFFF, var(--lp-wash));
+  border: 2px dashed rgba(178, 45, 239, 0.25);
+  border-radius: 20px;
+}
+
+.lp-empty-icon-ring {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #FAF5FF;
+  border: 2px solid var(--lp-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lp-purple);
+}
+
+.lp-empty-icon-ring svg {
+  width: 36px;
+  height: 36px;
+}
+
+.lp-empty-content {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lp-empty-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--lp-purple);
+  text-transform: uppercase;
+}
+
+.lp-empty-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--lp-deep);
+  margin: 0;
+}
+
+.lp-empty-desc {
+  font-size: 14px;
+  color: var(--lp-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lp-empty-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.lp-preset-launch-strip {
+  margin-top: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--lp-border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lp-preset-launch-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lp-muted);
+}
+
+/* --------------------------------------------------------------------------
+   COMPLETED ROADMAP STATE (STEP 7)
+   -------------------------------------------------------------------------- */
+.lp-completed-state-card {
+  padding: 36px 28px;
+  background: linear-gradient(135deg, rgba(66, 7, 93, 0.98), rgba(139, 37, 212, 0.95));
+  color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(66, 7, 93, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lp-completed-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.lp-completed-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lp-completed-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #4ADE80;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lp-completed-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.lp-completed-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.lp-completed-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.lp-completed-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.lp-completed-check-item svg {
+  color: #4ADE80;
+  flex-shrink: 0;
+}
+
+.lp-completed-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   LEARNING OVERVIEW DASHBOARD METRICS (STEP 13)
+   -------------------------------------------------------------------------- */
+.lp-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+.lp-metric-card {
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+  border-radius: 14px;
+  box-shadow: var(--lp-shadow-card);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.lp-metric-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(178, 45, 239, 0.3);
+}
+
+.lp-metric-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--lp-soft-muted);
+}
+
+.lp-metric-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #FAF5FF;
+  color: var(--lp-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lp-metric-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.lp-metric-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--lp-deep);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.lp-metric-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lp-muted);
+}
+
+.lp-metric-sub {
+  font-size: 11px;
+  color: var(--lp-soft-muted);
+}
+
+/* --------------------------------------------------------------------------
+   CONTINUE LEARNING / SMART NEXT ACTION (STEPS 17, 44, 45)
+   -------------------------------------------------------------------------- */
+.lp-current-action-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 18px;
+}
+
+.lp-current-step-card {
+  padding: 22px;
+  background: linear-gradient(145deg, #FFFFFF, #FAF5FF);
+  border: 1px solid rgba(178, 45, 239, 0.22);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.lp-step-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  background: #FAF5FF;
+  border: 1px solid rgba(178, 45, 239, 0.3);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--lp-purple);
+  text-transform: uppercase;
+}
+
+.lp-step-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--lp-deep);
+  margin: 0;
+}
+
+.lp-step-card-desc {
+  font-size: 13px;
+  color: var(--lp-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.lp-step-meta-chips {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--lp-muted);
+}
+
+.lp-step-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.lp-step-chip svg {
+  color: var(--lp-purple);
+  width: 14px;
+  height: 14px;
+}
+
+.lp-step-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* Smart Next Action Box */
+.lp-smart-next-box {
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(178, 45, 239, 0.2);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lp-smart-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #B45309;
+  text-transform: uppercase;
+}
+
+.lp-smart-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--lp-deep);
+  margin: 0;
+}
+
+.lp-smart-reason {
+  font-size: 13px;
+  color: var(--lp-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lp-smart-upnext {
+  padding: 10px 14px;
+  background: var(--lp-wash);
+  border-radius: 10px;
+  border: 1px solid var(--lp-border);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.lp-smart-upnext-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--lp-soft-muted);
+}
+
+.lp-smart-upnext-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lp-deep);
+}
+
+/* --------------------------------------------------------------------------
+   ROADMAP PROGRESS TIMELINE & EXECUTION (STEPS 15, 16, 18, 19)
+   -------------------------------------------------------------------------- */
+.lp-timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lp-milestone-accordion {
+  border: 1px solid var(--lp-border);
+  border-radius: 16px;
+  background: var(--lp-surface);
+  box-shadow: var(--lp-shadow-card);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lp-milestone-accordion.is-current {
+  border-color: rgba(178, 45, 239, 0.45);
+  box-shadow: 0 8px 26px rgba(178, 45, 239, 0.12);
+}
+
+.lp-milestone-accordion.is-completed {
+  border-color: rgba(25, 183, 122, 0.35);
+}
+
+.lp-milestone-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  background: transparent;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.lp-milestone-header:hover {
+  background: #FAF8FD;
+}
+
+.lp-milestone-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.lp-milestone-icon-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.lp-milestone-icon-indicator.completed {
+  background: rgba(25, 183, 122, 0.12);
+  color: var(--lp-positive);
+  border: 1.5px solid var(--lp-positive);
+}
+
+.lp-milestone-icon-indicator.current {
+  background: rgba(178, 45, 239, 0.12);
+  color: var(--lp-purple);
+  border: 2px solid var(--lp-purple);
+  box-shadow: 0 0 10px rgba(178, 45, 239, 0.25);
+}
+
+.lp-milestone-icon-indicator.upcoming {
+  background: var(--lp-wash);
+  color: var(--lp-muted);
+  border: 1.5px solid var(--lp-border);
+}
+
+.lp-milestone-title-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.lp-milestone-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--lp-deep);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lp-milestone-desc {
+  font-size: 12px;
+  color: var(--lp-muted);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lp-milestone-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.lp-milestone-progress-pill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.lp-milestone-progress-pill.completed {
+  background: rgba(25, 183, 122, 0.12);
+  color: var(--lp-positive);
+}
+
+.lp-milestone-progress-pill.current {
+  background: #FAF5FF;
+  color: var(--lp-purple);
+  border: 1px solid rgba(178, 45, 239, 0.25);
+}
+
+.lp-milestone-progress-pill.upcoming {
+  background: var(--lp-wash);
+  color: var(--lp-muted);
+}
+
+.lp-accordion-caret {
+  color: var(--lp-soft-muted);
+  transition: transform 0.2s ease;
+}
+
+.lp-milestone-accordion.is-open .lp-accordion-caret {
+  transform: rotate(180deg);
+}
+
+/* Expanded Milestone Body */
+.lp-milestone-body {
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--lp-border);
+  background: #FDFAFF;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: lp-enter 0.2s ease-out both;
+}
+
+.lp-topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.lp-topic-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1px solid var(--lp-border);
+  border-radius: 10px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.lp-topic-row:hover {
+  border-color: rgba(178, 45, 239, 0.25);
+  background: #FAF5FF;
+}
+
+.lp-topic-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Custom Checkbox Completion Control (Step 19) */
+.lp-topic-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid var(--lp-border);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.lp-topic-checkbox:hover {
+  border-color: var(--lp-purple);
+}
+
+.lp-topic-checkbox.completed {
+  background: var(--lp-positive);
+  border-color: var(--lp-positive);
+  color: #FFFFFF;
+}
+
+.lp-topic-checkbox.needs-review {
+  background: var(--lp-attention);
+  border-color: var(--lp-attention);
+  color: #FFFFFF;
+}
+
+.lp-topic-checkbox.current {
+  border-color: var(--lp-purple);
+  box-shadow: 0 0 0 2px rgba(178, 45, 239, 0.2);
+}
+
+.lp-topic-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.lp-topic-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lp-deep);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lp-topic-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.lp-topic-status-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.lp-topic-status-tag.completed {
+  background: rgba(25, 183, 122, 0.1);
+  color: var(--lp-positive);
+}
+
+.lp-topic-status-tag.in-progress {
+  background: #FAF5FF;
+  color: var(--lp-purple);
+  border: 1px solid rgba(178, 45, 239, 0.25);
+}
+
+.lp-topic-status-tag.needs-review {
+  background: rgba(245, 158, 11, 0.12);
+  color: #B45309;
+}
+
+.lp-topic-status-tag.not-started {
+  background: var(--lp-wash);
+  color: var(--lp-muted);
+}
+
+/* --------------------------------------------------------------------------
+   LEARNING RESOURCES (STEPS 20, 21, 22, 23, 24)
+   -------------------------------------------------------------------------- */
+.lp-resources-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.lp-filter-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.lp-filter-pill {
+  padding: 5px 12px;
+  background: #FFFFFF;
+  border: 1px solid var(--lp-border);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lp-deep);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lp-filter-pill:hover {
+  border-color: var(--lp-purple);
+  color: var(--lp-purple);
+}
+
+.lp-filter-pill.is-active {
+  background: var(--lp-purple);
+  border-color: var(--lp-purple);
+  color: #FFFFFF;
+}
+
+.lp-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #FFFFFF;
+  border: 1px solid var(--lp-border);
+  border-radius: 10px;
+  min-width: 240px;
+}
+
+.lp-search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  width: 100%;
+  color: var(--lp-ink);
+}
+
+.lp-search-box svg {
+  color: var(--lp-soft-muted);
+  width: 15px;
+  height: 15px;
+}
+
+.lp-resources-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lp-resource-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 18px;
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+  border-radius: 12px;
+  box-shadow: var(--lp-shadow-card);
+  transition: all 0.15s ease;
+}
+
+.lp-resource-row:hover {
+  border-color: rgba(178, 45, 239, 0.3);
+  box-shadow: 0 4px 16px rgba(66, 7, 93, 0.06);
+}
+
+.lp-resource-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.lp-resource-type-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #FAF5FF;
+  color: var(--lp-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lp-resource-type-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lp-resource-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.lp-resource-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--lp-deep);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lp-resource-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--lp-muted);
+  flex-wrap: wrap;
+}
+
+.lp-resource-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.lp-btn-bookmark {
+  background: transparent;
+  border: none;
+  color: var(--lp-soft-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.lp-btn-bookmark:hover {
+  color: var(--lp-purple);
+  background: #FAF5FF;
+}
+
+.lp-btn-bookmark.is-saved {
+  color: var(--lp-purple);
+}
+
+/* --------------------------------------------------------------------------
+   ASSESSMENTS & SCORES (STEPS 25-31)
+   -------------------------------------------------------------------------- */
+.lp-assessment-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.lp-assessment-main-card {
+  padding: 22px;
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lp-score-hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--lp-border);
+  flex-wrap: wrap;
+}
+
+.lp-score-big-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.lp-score-big-num {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--lp-purple);
+  line-height: 1;
+}
+
+.lp-score-total {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--lp-soft-muted);
+}
+
+.lp-score-meta-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--lp-muted);
+  flex-wrap: wrap;
+}
+
+.lp-score-stat-pill {
+  padding: 4px 10px;
+  background: var(--lp-wash);
+  border-radius: 8px;
+  border: 1px solid var(--lp-border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lp-stat-pill-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--lp-soft-muted);
+}
+
+.lp-stat-pill-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--lp-deep);
+}
+
+/* Assessment Attempt Trend Mini SVG */
+.lp-attempt-trend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #FAF8FE;
+  border-radius: 10px;
+  border: 1px solid var(--lp-border);
+  flex-wrap: wrap;
+}
+
+.lp-trend-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lp-deep);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lp-attempt-points {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.lp-attempt-point {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: #FFFFFF;
+  border: 1px solid var(--lp-border);
+}
+
+.lp-attempt-point.latest {
+  background: var(--lp-purple);
+  color: #FFFFFF;
+  border-color: var(--lp-purple);
+}
+
+/* Category Breakdown & Weak Area (Step 29, 30) */
+.lp-category-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lp-category-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lp-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lp-cat-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.lp-cat-status-badge.needs-review {
+  background: rgba(245, 158, 11, 0.12);
+  color: #B45309;
+}
+
+.lp-cat-status-badge.strong {
+  background: rgba(25, 183, 122, 0.12);
+  color: var(--lp-positive);
+}
+
+.lp-cat-status-badge.satisfactory {
+  background: #FAF5FF;
+  color: var(--lp-purple);
+}
+
+.lp-cat-track {
+  width: 100%;
+  height: 6px;
+  background: var(--lp-wash);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lp-cat-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.lp-cat-fill.needs-review { background: var(--lp-attention); }
+.lp-cat-fill.strong { background: var(--lp-positive); }
+.lp-cat-fill.satisfactory { background: var(--lp-purple); }
+
+/* Weak Area Connect Box (Step 30) */
+.lp-weak-area-card {
+  padding: 22px;
+  background: linear-gradient(145deg, #FFFDF8, #FFFBEB);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lp-weak-area-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #B45309;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lp-weak-area-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #78350F;
+  margin: 0;
+}
+
+.lp-weak-area-recommendation {
+  font-size: 13px;
+  color: #92400E;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lp-weak-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   PROJECTS (STEPS 33, 34, 35)
+   -------------------------------------------------------------------------- */
+.lp-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.lp-project-card {
+  padding: 24px;
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+  border-radius: 16px;
+  box-shadow: var(--lp-shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lp-project-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lp-project-title-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lp-project-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--lp-deep);
+  margin: 0;
+}
+
+.lp-project-sub {
+  font-size: 13px;
+  color: var(--lp-muted);
+  margin: 0;
+}
+
+.lp-project-skills-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.lp-project-skill-pill {
+  padding: 3px 9px;
+  background: #FAF5FF;
+  border: 1px solid var(--lp-border);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--lp-deep);
+}
+
+.lp-project-tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lp-task-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--lp-ink);
+  cursor: pointer;
+}
+
+.lp-task-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1.5px solid var(--lp-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #FFFFFF;
+}
+
+.lp-task-checkbox.completed {
+  background: var(--lp-positive);
+  border-color: var(--lp-positive);
+  color: #FFFFFF;
+}
+
+.lp-project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--lp-border);
+  flex-wrap: wrap;
+}
+
+.lp-readiness-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(25, 183, 122, 0.1);
+  border: 1px solid rgba(25, 183, 122, 0.3);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--lp-positive);
+}
+
+/* --------------------------------------------------------------------------
+   PRACTICE (STEP 32)
+   -------------------------------------------------------------------------- */
+.lp-practice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.lp-practice-card {
+  padding: 18px;
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lp-practice-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.lp-practice-type-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #FAF5FF;
+  color: var(--lp-purple);
+  border: 1px solid rgba(178, 45, 239, 0.2);
+}
+
+.lp-practice-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--lp-deep);
+  margin: 0;
+}
+
+.lp-practice-desc {
+  font-size: 13px;
+  color: var(--lp-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   PLANNER, STREAK & ACTIVITY (STEPS 36, 38, 40)
+   -------------------------------------------------------------------------- */
+.lp-planner-activity-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+}
+
+.lp-planner-card {
+  padding: 22px;
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lp-planner-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--lp-border);
+  padding-bottom: 8px;
+}
+
+.lp-planner-tab {
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lp-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lp-planner-tab.is-active {
+  background: #FAF5FF;
+  color: var(--lp-purple);
+  font-weight: 700;
+}
+
+.lp-planner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lp-planner-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--lp-wash);
+  border-radius: 10px;
+  border: 1px solid var(--lp-border);
+}
+
+.lp-planner-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.lp-planner-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lp-deep);
+}
+
+.lp-planner-time {
+  font-size: 11px;
+  color: var(--lp-soft-muted);
+}
+
+/* Streak & Consistency Card */
+.lp-streak-activity-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lp-streak-card {
+  padding: 18px 22px;
+  background: linear-gradient(135deg, #FFFFFF, #FAF5FF);
+  border: 1px solid rgba(178, 45, 239, 0.2);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lp-streak-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lp-streak-number-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lp-streak-days-big {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--lp-purple);
+}
+
+.lp-streak-flame {
+  color: var(--lp-attention);
+}
+
+.lp-week-dots-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(178, 45, 239, 0.1);
+}
+
+.lp-week-day-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--lp-muted);
+}
+
+.lp-day-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--lp-wash);
+  border: 1px solid var(--lp-border);
+  color: var(--lp-soft-muted);
+}
+
+.lp-day-dot.active {
+  background: var(--lp-positive);
+  border-color: var(--lp-positive);
+  color: #FFFFFF;
+}
+
+/* Recent Activity List (Step 40) */
+.lp-activity-card {
+  padding: 18px 22px;
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lp-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lp-activity-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--lp-muted);
+}
+
+.lp-activity-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #FAF5FF;
+  color: var(--lp-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lp-activity-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+.lp-activity-text {
+  font-weight: 500;
+  color: var(--lp-deep);
+  flex: 1;
+}
+
+.lp-activity-time {
+  font-size: 11px;
+  color: var(--lp-soft-muted);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   AI LEARNING INSIGHT (STEP 47)
+   -------------------------------------------------------------------------- */
+.lp-ai-insight-card {
+  padding: 22px 26px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), #FAF5FF);
+  border: 1px solid rgba(178, 45, 239, 0.28);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(178, 45, 239, 0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.lp-ai-icon-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--lp-purple), #9333EA);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(178, 45, 239, 0.28);
+}
+
+.lp-ai-icon-bubble svg {
+  width: 22px;
+  height: 22px;
+}
+
+.lp-ai-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.lp-ai-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--lp-purple);
+  text-transform: uppercase;
+}
+
+.lp-ai-headline {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--lp-deep);
+  margin: 0;
+}
+
+.lp-ai-body {
+  font-size: 13px;
+  color: var(--lp-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lp-ai-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (STEP 67)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .lp-overview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .lp-current-action-layout {
+    grid-template-columns: 1fr;
+  }
+  .lp-assessment-layout {
+    grid-template-columns: 1fr;
+  }
+  .lp-planner-activity-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .learning-page {
+    padding: 4px 6px 32px;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .lp-page-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .lp-heading-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-heading-actions select,
+  .lp-heading-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+  .lp-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .lp-hero-card {
+    padding: 16px 12px;
+  }
+  .lp-hero-identity {
+    min-width: 0;
+    width: 100%;
+  }
+  .lp-hero-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-hero-progress-block {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .lp-hero-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-hero-steps-preview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .lp-hero-cta-group {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-hero-cta-group .lp-btn-primary,
+  .lp-hero-cta-group .lp-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  .lp-milestone-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+  }
+  .lp-milestone-name,
+  .lp-milestone-desc {
+    white-space: normal;
+  }
+  .lp-milestone-left {
+    width: 100%;
+  }
+  .lp-milestone-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .lp-milestone-body {
+    padding: 0 10px 14px;
+  }
+  .lp-topic-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .lp-topic-title {
+    white-space: normal;
+    word-break: break-word;
+  }
+  .lp-topic-left {
+    width: 100%;
+  }
+  .lp-topic-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .lp-search-box {
+    width: 100%;
+    min-width: 0;
+  }
+  .lp-resources-control-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-resource-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .lp-resource-title {
+    white-space: normal;
+    word-break: break-word;
+  }
+  .lp-resource-left {
+    width: 100%;
+  }
+  .lp-resource-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .lp-score-hero-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .lp-attempt-trend-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .lp-attempt-points {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .lp-attempt-point {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
+  .lp-step-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-step-actions-row button,
+  .lp-step-actions-row a {
+    width: 100%;
+    justify-content: center;
+  }
+  .lp-weak-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-weak-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+  .lp-project-card {
+    padding: 16px 12px;
+  }
+  .lp-project-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-project-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .lp-project-footer button {
+    width: 100%;
+    justify-content: center;
+  }
+  .lp-planner-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .lp-planner-item button {
+    width: 100%;
+    justify-content: center;
+  }
+  .lp-week-dots-row {
+    gap: 2px;
+  }
+  .lp-day-dot {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+  .lp-ai-insight-card {
+    flex-direction: column;
+    padding: 16px 12px;
+  }
+  .lp-ai-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-ai-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+  .lp-empty-state-card {
+    padding: 24px 12px;
+  }
+  .lp-empty-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .lp-empty-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+  .lp-completed-state-card {
+    padding: 20px 14px;
+  }
+  .lp-completed-checklist {
+    grid-template-columns: 1fr;
+  }
+  .lp-completed-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .lp-completed-actions button,
+  .lp-completed-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learning-page {
+    animation: none !important;
+  }
+  .learning-page * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

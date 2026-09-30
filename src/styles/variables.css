@@ -1,0 +1,90 @@
+:root {
+  /* Portal Primary Colors */
+  --portal-individual: #B22DEF;
+  --portal-individual-deep: #42075D;
+  --portal-individual-soft: #F7F0FE;
+  --portal-individual-border: #E8DDF0;
+
+  --portal-employee: #2735F5;
+  --portal-employee-deep: #1823A8;
+  --portal-employee-soft: #EEF1FF;
+  --portal-employee-border: #D8DCF8;
+
+  --portal-company: #874FFF;
+  --portal-company-deep: #5B2BBF;
+  --portal-company-soft: #F0E9FF;
+  --portal-company-border: #E6DEF7;
+
+  /* Default Active Portal Variables (Individual by default) */
+  --portal-primary: var(--portal-individual);
+  --portal-deep: var(--portal-individual-deep);
+  --portal-soft: var(--portal-individual-soft);
+  --portal-border: var(--portal-individual-border);
+
+  /* Legacy variables for backwards compatibility */
+  --purple: #b22def;
+  --purple-mid: #8b25d4;
+  --deep-purple: #42075d;
+  --b-primary: #B22DEF;
+  --b-deep: #42075D;
+  --soft-purple: #eedcff;
+
+  /* Neutrals & Base */
+  --ink: #171321;
+  --ink-secondary: #52566E;
+  --muted: #625a69;
+  --muted-light: #8d8395;
+  --page: #f8f5ff;
+  --border: #e8ddf0;
+  --white: #ffffff;
+
+  /* Semantic Colors */
+  --sem-success: #19B77A;
+  --sem-success-soft: #E7F9F2;
+  --sem-warning: #F59E0B;
+  --sem-warning-soft: #FEF6E7;
+  --sem-danger: #E05252;
+  --sem-danger-soft: #FDEEEE;
+  --sem-info: #4DA3FF;
+  --sem-info-soft: #EEF6FF;
+
+  /* Layout dimensions */
+  --sidebar-width: 252px;
+  --sidebar-collapsed: 72px;
+  --topbar-height: 76px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+
+  /* Card Radius Scale */
+  --radius-card-main: 24px;
+  --radius-card-secondary: 18px;
+  --radius-control: 12px;
+  --radius-sm: 8px;
+  --radius-pill: 9999px;
+
+  /* Spacing Scale */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 40px;
+  --space-4xl: 48px;
+}
+
+/* Scoped Portal Overrides on #appShell */
+.employee-portal {
+  --portal-primary: var(--portal-employee);
+  --portal-deep: var(--portal-employee-deep);
+  --portal-soft: var(--portal-employee-soft);
+  --portal-border: var(--portal-employee-border);
+}
+
+.company-portal {
+  --portal-primary: var(--portal-company);
+  --portal-deep: var(--portal-company-deep);
+  --portal-soft: var(--portal-company-soft);
+  --portal-border: var(--portal-company-border);
+}
+

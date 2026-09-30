@@ -1,0 +1,827 @@
+/* ============================================================================
+   TALENTSCOPE.AI — ONBOARDING SYSTEM STYLES
+   Immersive Question Flow, Contextual Illustrations, Responsive Progress
+   ============================================================================ */
+
+.ts-onboarding-viewport {
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #FAF8FC;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #241B32;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------
+   TOP PROGRESS NAVBAR
+   ---------------------------------------------------------------------------- */
+.ts-ob-nav {
+  height: 72px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ECE4F2;
+  background: #FFFFFF;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.ts-ob-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ts-ob-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F5EEF8;
+  border: 1px solid #E8DEEE;
+  border-radius: 10px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4C3C63;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.ts-ob-btn-back:hover {
+  background: #EADBFF;
+  border-color: #C8ACFA;
+  color: #381B6D;
+  transform: translateX(-2px);
+}
+
+.ts-ob-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #241B32;
+}
+
+.ts-ob-brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #B22DEF 0%, #874FFF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-ob-brand-mark img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.ts-ob-brand-name {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ts-ob-brand-name span {
+  color: #874FFF;
+}
+
+/* Center Progress Pill */
+.ts-ob-progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.ts-ob-progress-text {
+  font-size: 12.5px;
+  font-weight: 750;
+  color: #6C6078;
+}
+
+.ts-ob-progress-text strong {
+  color: var(--ob-accent, #B22DEF);
+}
+
+.ts-ob-progress-track {
+  width: 220px;
+  height: 6px;
+  border-radius: 999px;
+  background: #EBE3F0;
+  overflow: hidden;
+  position: relative;
+}
+
+.ts-ob-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #B22DEF, #874FFF);
+  transition: width 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* User Type Badge */
+.ts-ob-role-pill {
+  font-size: 12px;
+  font-weight: 750;
+  padding: 5px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FAF5FF;
+  border: 1px solid #EADBFF;
+  color: #7A28C7;
+}
+
+.ts-ob-role-pill.is-employee {
+  background: #EEF2FF;
+  border-color: #C7D2FE;
+  color: #2735F5;
+}
+
+.ts-ob-role-pill.is-company {
+  background: #F3EEFF;
+  border-color: #DDD0F7;
+  color: #874FFF;
+}
+
+/* ----------------------------------------------------------------------------
+   MAIN ONBOARDING CANVAS (SPLIT / DUAL COLUMN)
+   ---------------------------------------------------------------------------- */
+.ts-ob-canvas {
+  flex: 1 1 auto;
+  display: flex;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 32px 60px;
+  gap: 48px;
+  box-sizing: border-box;
+}
+
+/* Left Question Column */
+.ts-ob-main-col {
+  flex: 1 1 60%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: obSlideIn 240ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes obSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ts-question-category-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--ob-accent, #B22DEF);
+  margin-bottom: 10px;
+}
+
+.ts-question-category-tag i {
+  width: 14px;
+  height: 14px;
+}
+
+.ts-question-title {
+  font-size: 28px;
+  font-weight: 850;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #1A1028;
+  margin: 0 0 10px;
+}
+
+.ts-question-why {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #6C6078;
+  margin: 0 0 28px;
+  max-width: 640px;
+}
+
+/* Right Illustration Column */
+.ts-ob-visual-col {
+  flex: 1 1 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ts-ob-illustration-card {
+  width: 100%;
+  max-width: 440px;
+  background: radial-gradient(circle at 50% 30%, rgba(178, 45, 239, 0.08) 0%, transparent 70%),
+              #FFFFFF;
+  border: 1px solid #ECE4F2;
+  border-radius: 24px;
+  box-shadow: 0 20px 48px -12px rgba(45, 20, 75, 0.08);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.ts-ob-svg-frame {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ts-ob-svg-frame svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 12px 24px rgba(135, 79, 255, 0.16));
+}
+
+.ts-ob-illustration-text strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 800;
+  color: #1F172E;
+  margin-bottom: 6px;
+}
+
+.ts-ob-illustration-text p {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #6C6078;
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   QUESTION INPUT COMPONENTS
+   ---------------------------------------------------------------------------- */
+.ts-q-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ts-q-fields-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.ts-q-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ts-q-option-card {
+  background: #FFFFFF;
+  border: 2px solid #EAE2F2;
+  border-radius: 16px;
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.ts-q-option-card:hover {
+  border-color: #D0BEE5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(45, 20, 75, 0.07);
+}
+
+.ts-q-option-card.is-selected {
+  border-color: var(--ob-accent, #B22DEF);
+  background: #FDF9FF;
+  box-shadow: 0 8px 28px rgba(178, 45, 239, 0.12);
+}
+
+.ts-q-option-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ts-q-option-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: #F5EDFA;
+  color: var(--ob-accent, #B22DEF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ts-q-option-card.is-selected .ts-q-option-icon {
+  background: var(--ob-accent, #B22DEF);
+  color: #FFFFFF;
+}
+
+.ts-q-option-copy strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 750;
+  color: #1F192E;
+}
+
+.ts-q-option-copy small {
+  display: block;
+  font-size: 13px;
+  color: #6C6078;
+  margin-top: 2px;
+}
+
+.ts-q-option-radio,
+.ts-q-option-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid #D2C5DF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  transition: all 140ms ease;
+}
+
+.ts-q-option-check {
+  border-radius: 6px;
+}
+
+.ts-q-option-radio.is-checked,
+.ts-q-option-check.is-checked {
+  background: var(--ob-accent, #B22DEF);
+  border-color: var(--ob-accent, #B22DEF);
+}
+
+.ts-q-option-radio svg,
+.ts-q-option-check svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+}
+
+.ts-q-option-radio.is-checked svg,
+.ts-q-option-check.is-checked svg {
+  opacity: 1;
+}
+
+/* Multi-select Pills / Chips */
+.ts-q-pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ts-q-pill-btn {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2D9E8;
+  font-size: 13.5px;
+  font-weight: 650;
+  color: #382A4F;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 140ms ease;
+}
+
+.ts-q-pill-btn:hover {
+  background: #F8F4FC;
+  border-color: #CEBFDF;
+  transform: translateY(-1px);
+}
+
+.ts-q-pill-btn.is-selected {
+  background: var(--ob-accent, #B22DEF);
+  border-color: var(--ob-accent, #B22DEF);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(178, 45, 239, 0.28);
+}
+
+.ts-q-pill-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Skill & Role Search Selectors */
+.ts-q-search-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ts-q-add-btn {
+  position: absolute;
+  right: 8px;
+  height: 32px;
+  padding: 0 12px;
+  background: var(--ob-accent, #B22DEF);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 140ms ease;
+}
+
+.ts-q-add-btn:hover {
+  opacity: 0.92;
+}
+
+.ts-q-selected-tags-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px;
+  background: #FFFFFF;
+  border: 1px dashed #DCCFE8;
+  border-radius: 12px;
+}
+
+.ts-q-empty-tags-hint {
+  font-size: 13px;
+  color: #8C809A;
+  align-self: center;
+}
+
+.ts-q-skill-badge {
+  padding: 6px 12px;
+  background: #FAF2FF;
+  border: 1px solid #E8D3F9;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #791CBF;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ts-q-skill-badge .remove-tag-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.ts-q-suggestions-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ts-q-suggestions-label {
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7C7089;
+}
+
+.ts-q-suggestions-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ts-q-suggest-chip {
+  padding: 6px 12px;
+  background: #F4EEF8;
+  border: 1px solid #E4DAEC;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #403256;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 140ms ease;
+}
+
+.ts-q-suggest-chip:hover {
+  background: #EDE1F6;
+  border-color: #D2BCE7;
+  color: #26163D;
+  transform: translateY(-1px);
+}
+
+.ts-q-suggest-chip.is-selected-role {
+  background: var(--ob-accent, #B22DEF);
+  border-color: var(--ob-accent, #B22DEF);
+  color: #FFFFFF;
+}
+
+.ts-q-suggest-chip svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Skill Level Matrix */
+.ts-q-level-matrix {
+  display: flex;
+  flex-direction: column;
+}
+
+.ts-q-matrix-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ts-q-matrix-row {
+  background: #FFFFFF;
+  border: 1px solid #EAE2F2;
+  border-radius: 14px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ts-q-matrix-skill-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 750;
+  color: #1F192E;
+}
+
+.ts-q-matrix-skill-name i {
+  color: var(--ob-accent, #B22DEF);
+  width: 18px;
+  height: 18px;
+}
+
+.ts-q-level-pill-group {
+  display: flex;
+  gap: 6px;
+}
+
+.ts-q-level-pill {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #F4EDF8;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5B4D70;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.ts-q-level-pill:hover {
+  background: #EADBFF;
+  color: #2F1757;
+}
+
+.ts-q-level-pill.is-active {
+  background: var(--ob-accent, #B22DEF);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(178, 45, 239, 0.25);
+}
+
+/* Textarea */
+.ts-q-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #E2D9E8;
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #241B32;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.ts-q-textarea:focus {
+  outline: none;
+  border-color: var(--ob-accent, #B22DEF);
+  box-shadow: 0 0 0 3px rgba(178, 45, 239, 0.14);
+}
+
+/* ----------------------------------------------------------------------------
+   BOTTOM ACTIONS BAR
+   ---------------------------------------------------------------------------- */
+.ts-ob-actions-bar {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid #ECE4F2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ts-ob-skip-btn {
+  background: transparent;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 650;
+  color: #7A6E88;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: color 140ms ease;
+}
+
+.ts-ob-skip-btn:hover {
+  color: #2A1F3B;
+  background: #F3ECF6;
+}
+
+.ts-ob-continue-btn {
+  height: 48px;
+  padding: 0 28px;
+  background: var(--ob-accent, #B22DEF);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 750;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(178, 45, 239, 0.28);
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+.ts-ob-continue-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(178, 45, 239, 0.36);
+  filter: brightness(1.04);
+}
+
+.ts-ob-continue-btn:active {
+  transform: scale(0.99);
+}
+
+/* ----------------------------------------------------------------------------
+   PERSONALIZED INTELLIGENCE REPORT CARDS
+   ---------------------------------------------------------------------------- */
+.ts-report-card {
+  background: #FFFFFF;
+  border: 1px solid #ECE4F2;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(45, 20, 75, 0.04);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.ts-report-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #F0EAF6;
+}
+
+.ts-report-card-header i,
+.ts-report-card-header svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.ts-report-card-header strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1F172E;
+}
+
+.ts-report-card-header small {
+  display: block;
+  font-size: 12.5px;
+  color: #6C6078;
+  margin-top: 1px;
+}
+
+.ts-report-kv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ts-report-kv-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #FAF7FC;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.ts-report-kv-item .label {
+  color: #6C6078;
+  font-weight: 600;
+}
+
+.ts-report-kv-item .val {
+  color: #1E172B;
+  font-weight: 700;
+  text-align: right;
+}
+
+@keyframes spinPulse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ----------------------------------------------------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+   ---------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .ts-ob-canvas {
+    gap: 32px;
+    padding: 32px 24px;
+  }
+  .ts-ob-main-col {
+    max-width: none;
+  }
+  .ts-ob-visual-col {
+    display: none;
+  }
+  .ts-ob-progress-track {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-ob-nav {
+    padding: 0 16px;
+    height: 64px;
+  }
+  .ts-ob-brand-name {
+    display: none;
+  }
+  .ts-q-fields-grid {
+    grid-template-columns: 1fr;
+  }
+  .ts-question-title {
+    font-size: 23px;
+  }
+  .ts-ob-actions-bar {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .ts-ob-continue-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .ts-ob-skip-btn {
+    text-align: center;
+  }
+}

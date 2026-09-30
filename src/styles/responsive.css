@@ -1,0 +1,209 @@
+.mobile-scrim, .topbar__mobile-start { display: none; }
+
+/* Global App Shell Horizontal Overflow Prevention */
+#appShell {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
+}
+
+#mainContent {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ============================================================================
+   RESPONSIVE BREAKPOINTS (Phase 7 & Cross-Portal Consistency)
+   ============================================================================ */
+
+/* --- 1024px (Tablets Landscape & Small Laptops) --- */
+@media (max-width: 1024px) {
+  .intelligence-console__blocks {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .entity-list-grid {
+    column-gap: 16px !important;
+  }
+}
+
+/* --- 800px (Mobile Sidebar & App Shell Breakpoint) --- */
+@media (max-width: 800px) {
+  :root { --topbar-height: 68px; }
+  .sidebar { width: 0 !important; flex-basis: 0 !important; position: fixed !important; left: 0; top: 0; bottom: 0; overflow: visible !important; z-index: 400 !important; }
+  .sidebar.is-expanded { width: 0 !important; flex-basis: 0 !important; }
+  .sidebar .sidebar__inner { width: var(--sidebar-width, 250px) !important; transform: translateX(-100%); transition: transform 280ms var(--ease); }
+  .sidebar.is-mobile-open { width: var(--sidebar-width, 250px) !important; flex-basis: var(--sidebar-width, 250px) !important; }
+  .sidebar.is-mobile-open .sidebar__inner { transform: translateX(0); }
+  .sidebar.is-mobile-open .brand__name, .sidebar.is-mobile-open .nav-group__heading, .sidebar.is-mobile-open .nav-item__label, .sidebar.is-mobile-open .sidebar__profile-copy, .sidebar.is-mobile-open .sidebar__profile > svg { opacity: 1; transform: translateX(0); }
+  .sidebar__toggle { display: none; }
+  .mobile-scrim { position: fixed; inset: 0; z-index: 300 !important; background: rgba(23,19,33,.45); backdrop-filter: blur(3px); }
+  .mobile-scrim.is-visible { display: block; }
+  .topbar { padding: 0 16px; gap: 12px; }
+  .topbar__context { display: none; }
+  .topbar__mobile-start { display: flex; align-items: center; gap: 8px; }
+  .topbar__menu { color: var(--ink); }
+  .mobile-brand { font: 600 17px 'DM Sans', sans-serif; white-space: nowrap; }
+  .search { flex: 1; width: auto; }
+  .search kbd, .button--assistant span, .profile-trigger__copy, .profile-trigger > svg { display: none; }
+  .button--assistant { width: 38px; justify-content: center; padding: 0; }
+  .profile-trigger { padding: 3px; }
+  .notification-popover { right: 66px; }
+}
+
+/* --- 768px (Mobile Portrait & Medium Tablets) --- */
+@media (max-width: 768px) {
+  /* Equal Panels & Multi-column Grids stack vertically */
+  .equal-panels-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .intelligence-console__blocks {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Heroes & Action Bars */
+  .profile-hero-card,
+  .emp-hero,
+  .cmp-hero {
+    padding: 20px 16px !important;
+    gap: 16px !important;
+  }
+
+  .profile-hero-main,
+  .emp-hero-content,
+  .cmp-hero__content {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .profile-identity-wrap {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .profile-actions-bar,
+  .emp-hero-actions,
+  .cmp-hero__actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .profile-btn-group,
+  .emp-hero-actions > div,
+  .cmp-hero__actions > div {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .profile-btn-group button,
+  .emp-hero-actions button,
+  .cmp-hero__actions button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Universal Modal Viewport Safeguard */
+  .v2-modal-overlay,
+  .cmp-modal-scrim,
+  .skill-modal-backdrop,
+  .portal-modal-scrim,
+  .ts-modal-overlay,
+  .emp-modal-overlay {
+    padding: 12px !important;
+  }
+
+  .v2-modal-container,
+  .cmp-modal-dialog,
+  .skill-modal-box,
+  .portal-modal-dialog,
+  .ts-modal-card,
+  .emp-modal-dialog {
+    width: 100% !important;
+    max-width: calc(100vw - 24px) !important;
+    max-height: calc(100vh - 24px) !important;
+    border-radius: 16px !important;
+  }
+
+  .v2-modal-header,
+  .cmp-modal-header,
+  .portal-modal-header,
+  .ts-modal-header {
+    padding: 16px 18px !important;
+  }
+
+  .v2-modal-body,
+  .cmp-modal-body,
+  .portal-modal-body,
+  .ts-modal-body {
+    padding: 16px 18px !important;
+  }
+
+  .v2-modal-footer,
+  .cmp-modal-footer,
+  .portal-modal-footer,
+  .ts-modal-footer {
+    padding: 14px 18px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .v2-modal-footer button,
+  .cmp-modal-footer button,
+  .portal-modal-footer button,
+  .ts-modal-footer button {
+    flex: 1 1 auto !important;
+  }
+
+  /* Filter Panels on Mobile */
+  .market-trend-filter__panel,
+  .job-trend-filter__panel {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 24px !important;
+    left: 16px !important;
+    right: 16px !important;
+    width: auto !important;
+    max-width: calc(100vw - 32px) !important;
+    max-height: 80vh !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28) !important;
+    z-index: 100000 !important;
+  }
+
+  /* Page Padding */
+  .ts-profile-page,
+  .employee-page,
+  .company-page {
+    padding: 16px 12px !important;
+  }
+}
+
+/* --- 480px & 360px (Compact Mobile Screens) --- */
+@media (max-width: 480px) {
+  .profile-name,
+  .emp-hero-title,
+  .cmp-hero h1 {
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+  }
+
+  .profile-pills-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+
+  .topbar {
+    padding: 0 12px !important;
+  }
+
+  .search input {
+    font-size: 13px !important;
+  }
+}
+

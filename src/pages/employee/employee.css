@@ -1,0 +1,797 @@
+/* ============================================================================
+   TALENTSCOPE.AI — EMPLOYEE PORTAL MASTER STYLESHEET
+   Identity: SAPPHIRE ELECTRIC INDIGO (#2735F5) WORKFORCE & GROWTH PLATFORM
+   Scoped strictly under .employee-portal & .employee-page & .emp-*
+   ============================================================================ */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES (Scoped to Employee Portal)
+   -------------------------------------------------------------------------- */
+.employee-portal {
+  --emp-primary: #2735F5;
+  --emp-deep-primary: #1823A8;
+  --emp-light: #EEF1FF;
+  --emp-soft: #F5F7FF;
+  --emp-background: #F7F8FF;
+  --emp-surface: #FFFFFF;
+  --emp-text-primary: #17182B;
+  --emp-text-secondary: #52566E;
+  --emp-text-muted: #70738A;
+  --emp-border: #E5E7EB;
+  --emp-border-subtle: #EEF1FF;
+  --emp-border-glass: rgba(39, 53, 245, 0.16);
+  --emp-success: #19B77A;
+  --emp-success-light: #E7F9F2;
+  --emp-danger: #E05252;
+  --emp-danger-light: #FDEEEE;
+  --emp-attention: #F59E0B;
+  --emp-attention-light: #FEF6E7;
+  --emp-shadow-sm: 0 1px 3px rgba(24, 35, 168, 0.04);
+  --emp-shadow-card: 0 4px 16px rgba(24, 35, 168, 0.05);
+  --emp-shadow-elevated: 0 12px 36px rgba(24, 35, 168, 0.10);
+  --emp-shadow-glass: 0 12px 32px rgba(39, 53, 245, 0.12);
+  --emp-radius-sm: 8px;
+  --emp-radius-md: 12px;
+  --emp-radius-lg: 16px;
+  --emp-radius-xl: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   2. APP SHELL & SIDEBAR ADAPTATION IN EMPLOYEE MODE
+   Electric Sapphire Indigo (#2735F5 → #1823A8)
+   -------------------------------------------------------------------------- */
+
+.employee-portal .sidebar {
+  background: linear-gradient(180deg, #2735F5 0%, #1823A8 100%) !important;
+  color: rgba(255, 255, 255, 0.90);
+  box-shadow: 2px 0 20px rgba(24, 35, 168, 0.18);
+}
+
+.employee-portal .sidebar .brand {
+  color: #FFFFFF;
+}
+
+.employee-portal .sidebar.is-expanded .brand__name {
+  color: #FFFFFF !important;
+}
+
+.employee-portal .sidebar .brand__name span {
+  color: #D6DCFF !important;
+  opacity: 0.95;
+}
+
+.employee-portal .sidebar .sidebar__toggle {
+  color: #FFFFFF !important;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.employee-portal .sidebar .sidebar__toggle:hover,
+.employee-portal .sidebar .sidebar__toggle:focus-visible {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+
+.employee-portal .sidebar:not(.is-expanded) .sidebar__toggle {
+  color: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.employee-portal .sidebar .nav-group__heading {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+}
+
+.employee-portal .sidebar .nav-item {
+  color: rgba(255, 255, 255, 0.88) !important;
+  border-radius: 12px;
+  margin-bottom: 2px;
+  transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.employee-portal .sidebar .nav-item i,
+.employee-portal .sidebar .nav-item svg {
+  color: rgba(255, 255, 255, 0.88) !important;
+  stroke: rgba(255, 255, 255, 0.88) !important;
+}
+
+.employee-portal .sidebar .nav-item:not(.is-active):hover,
+.employee-portal .sidebar .nav-item:not(.is-active):focus-visible {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+}
+
+.employee-portal .sidebar .nav-item.is-active,
+.employee-portal .sidebar .nav-item[aria-current="page"] {
+  background: #FFFFFF !important;
+  color: #2735F5 !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+.employee-portal .sidebar .nav-item.is-active i,
+.employee-portal .sidebar .nav-item.is-active svg {
+  color: #2735F5 !important;
+  stroke: #2735F5 !important;
+}
+
+.employee-portal .sidebar .nav-item.is-active .nav-item__label {
+  color: #2735F5 !important;
+  font-weight: 700 !important;
+}
+
+.employee-portal .sidebar .sidebar__profile {
+  border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
+}
+
+.employee-portal .sidebar .sidebar__profile-copy strong {
+  color: #FFFFFF !important;
+}
+
+.employee-portal .sidebar .sidebar__profile-copy small {
+  color: rgba(255, 255, 255, 0.70) !important;
+}
+
+.employee-portal .sidebar .avatar {
+  background: #1823A8 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. TOPBAR ACCENTS IN EMPLOYEE MODE
+   -------------------------------------------------------------------------- */
+.employee-portal .topbar {
+  border-bottom: 1px solid var(--emp-border);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.employee-portal .portal-badge {
+  background: var(--emp-light);
+  color: var(--emp-primary);
+  border: 1px solid rgba(39, 53, 245, 0.20);
+  font-weight: 700;
+  font-size: 11.5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.employee-portal .search:focus-within {
+  border-color: var(--emp-primary);
+  box-shadow: 0 0 0 3px rgba(39, 53, 245, 0.15);
+}
+
+.employee-portal .button--assistant {
+  background: var(--emp-light) !important;
+  color: var(--emp-primary) !important;
+  border: 1px solid rgba(39, 53, 245, 0.22) !important;
+}
+
+.employee-portal .button--assistant:hover {
+  background: var(--emp-primary) !important;
+  color: #FFFFFF !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. GLOBAL BUTTON SYSTEM (Strict Rules)
+   Primary: #2735F5
+   Secondary: #EEF1FF
+   Ghost: transparent with border
+   -------------------------------------------------------------------------- */
+.emp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--emp-primary);
+  color: #FFFFFF !important;
+  border: 1px solid transparent;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 650;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(39, 53, 245, 0.20);
+  line-height: 1.3;
+}
+
+.emp-btn-primary:hover,
+.emp-btn-primary:focus-visible {
+  background: var(--emp-deep-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(24, 35, 168, 0.28);
+}
+
+.emp-btn-primary:active {
+  transform: translateY(0);
+}
+
+.emp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--emp-light);
+  color: var(--emp-primary) !important;
+  border: 1px solid rgba(39, 53, 245, 0.16);
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 650;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 160ms ease;
+  line-height: 1.3;
+}
+
+.emp-btn-secondary:hover,
+.emp-btn-secondary:focus-visible {
+  background: #E0E6FF;
+  color: var(--emp-deep-primary) !important;
+  border-color: rgba(39, 53, 245, 0.28);
+}
+
+.emp-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--emp-text-secondary) !important;
+  border: 1px solid var(--emp-border);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 160ms ease;
+  line-height: 1.3;
+}
+
+.emp-btn-ghost:hover,
+.emp-btn-ghost:focus-visible {
+  background: var(--emp-soft);
+  color: var(--emp-text-primary) !important;
+  border-color: #D1D5DB;
+}
+
+.emp-btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.emp-btn-lg {
+  padding: 12px 24px;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   5. CENTERED ACCESSIBLE MODAL SYSTEM
+   -------------------------------------------------------------------------- */
+.emp-modal-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 15, 40, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 24px;
+  animation: empModalFadeIn 180ms ease-out forwards;
+}
+
+.emp-modal-scrim.is-closing {
+  animation: empModalFadeOut 160ms ease-in forwards;
+}
+
+.emp-modal-dialog {
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 20px 48px rgba(24, 35, 168, 0.18), 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(39, 53, 245, 0.12);
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: empModalScaleIn 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.emp-modal-scrim.is-closing .emp-modal-dialog {
+  animation: empModalScaleOut 160ms ease-in forwards;
+}
+
+.emp-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--emp-border-subtle);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  background: #FAFAFF;
+}
+
+.emp-modal-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.emp-modal-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--emp-text-primary);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.emp-modal-subtitle {
+  font-size: 13px;
+  color: var(--emp-text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.emp-modal-close {
+  background: #FFFFFF;
+  border: 1px solid var(--emp-border);
+  color: var(--emp-text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 140ms ease;
+  flex-shrink: 0;
+}
+
+.emp-modal-close:hover {
+  background: var(--emp-light);
+  color: var(--emp-primary);
+  border-color: rgba(39, 53, 245, 0.2);
+}
+
+.emp-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: var(--emp-text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.emp-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--emp-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  background: #FAFAFF;
+}
+
+@keyframes empModalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes empModalFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes empModalScaleIn {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes empModalScaleOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.96) translateY(8px); }
+}
+
+/* --------------------------------------------------------------------------
+   6. DUAL-STATE CONTEXT SWITCHER BAR
+   -------------------------------------------------------------------------- */
+.emp-state-banner {
+  background: #FFFFFF;
+  border: 1px solid var(--emp-border);
+  border-radius: 14px;
+  padding: 12px 18px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: var(--emp-shadow-sm);
+}
+
+.emp-state-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.emp-state-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.emp-state-pill--company {
+  background: #E8F5E9;
+  color: #1B5E20;
+  border: 1px solid rgba(46, 125, 50, 0.25);
+}
+
+.emp-state-pill--independent {
+  background: var(--emp-light);
+  color: var(--emp-primary);
+  border: 1px solid rgba(39, 53, 245, 0.25);
+}
+
+.emp-state-meta {
+  font-size: 13px;
+  color: var(--emp-text-secondary);
+}
+
+.emp-state-meta strong {
+  color: var(--emp-text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   7. PAGE LAYOUT & HERO COMPONENTS
+   -------------------------------------------------------------------------- */
+.employee-page {
+  padding: 24px 32px 64px;
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.emp-hero {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F7FF 100%);
+  border: 1px solid rgba(39, 53, 245, 0.12);
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: var(--emp-shadow-card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.emp-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 750;
+  color: var(--emp-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.emp-hero-title {
+  font-size: 26px;
+  font-weight: 850;
+  color: var(--emp-text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.emp-hero-desc {
+  font-size: 14px;
+  color: var(--emp-text-secondary);
+  margin: 0;
+  max-width: 680px;
+  line-height: 1.45;
+}
+
+.emp-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. CARDS, GRIDS, & VISUAL CONTAINERS
+   -------------------------------------------------------------------------- */
+.emp-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.emp-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.emp-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.emp-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.emp-card {
+  background: var(--emp-surface);
+  border: 1px solid var(--emp-border);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--emp-shadow-sm);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.emp-card:hover {
+  box-shadow: var(--emp-shadow-card);
+}
+
+.emp-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.emp-card-title {
+  font-size: 16px;
+  font-weight: 750;
+  color: var(--emp-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.emp-card-subtitle {
+  font-size: 12.5px;
+  color: var(--emp-text-muted);
+  margin: 2px 0 0;
+}
+
+.emp-card-metric {
+  font-size: 28px;
+  font-weight: 850;
+  color: var(--emp-text-primary);
+  line-height: 1.1;
+  margin: 4px 0 8px;
+}
+
+.emp-card-metric--highlight {
+  color: var(--emp-primary);
+}
+
+/* Icon Container Rule (Clean, constrained size) */
+.emp-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--emp-light);
+  color: var(--emp-primary);
+  flex-shrink: 0;
+}
+
+.emp-icon-box i,
+.emp-icon-box svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+}
+
+.emp-icon-box--success {
+  background: var(--emp-success-light);
+  color: var(--emp-success);
+}
+
+.emp-icon-box--warning {
+  background: var(--emp-attention-light);
+  color: var(--emp-attention);
+}
+
+.emp-icon-box--danger {
+  background: var(--emp-danger-light);
+  color: var(--emp-danger);
+}
+
+/* Badge System */
+.emp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 650;
+  padding: 3px 9px;
+  border-radius: 6px;
+  line-height: 1.3;
+  width: fit-content;
+}
+
+.emp-badge-primary {
+  background: var(--emp-light);
+  color: var(--emp-primary);
+  border: 1px solid rgba(39, 53, 245, 0.16);
+}
+
+.emp-badge-success {
+  background: var(--emp-success-light);
+  color: #0E7047;
+  border: 1px solid rgba(25, 183, 122, 0.22);
+}
+
+.emp-badge-warning {
+  background: var(--emp-attention-light);
+  color: #925304;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.emp-badge-danger {
+  background: var(--emp-danger-light);
+  color: #991B1B;
+  border: 1px solid rgba(224, 82, 82, 0.22);
+}
+
+.emp-badge-neutral {
+  background: #F3F4F6;
+  color: #4B5563;
+  border: 1px solid #E5E7EB;
+}
+
+/* --------------------------------------------------------------------------
+   9. SKILL INTELLIGENCE & HEALTH BARS
+   -------------------------------------------------------------------------- */
+.emp-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #EEF1FF;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.emp-progress-fill {
+  height: 100%;
+  background: var(--emp-primary);
+  border-radius: 999px;
+  transition: width 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.emp-progress-fill--success {
+  background: var(--emp-success);
+}
+
+.emp-progress-fill--warning {
+  background: var(--emp-attention);
+}
+
+/* --------------------------------------------------------------------------
+   10. QUESTION BANKS & COMMUNITY MODULES
+   -------------------------------------------------------------------------- */
+.emp-qb-card {
+  border: 1px solid var(--emp-border);
+  border-radius: 14px;
+  padding: 18px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 160ms ease;
+}
+
+.emp-qb-card:hover {
+  border-color: rgba(39, 53, 245, 0.35);
+  box-shadow: 0 4px 14px rgba(39, 53, 245, 0.08);
+}
+
+.emp-reputation-banner {
+  background: linear-gradient(135deg, #1823A8 0%, #2735F5 100%);
+  color: #FFFFFF;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 8px 24px rgba(24, 35, 168, 0.22);
+}
+
+.emp-stat-pill {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.emp-stat-pill strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.emp-stat-pill small {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.80);
+}
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .emp-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .emp-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .emp-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .employee-page {
+    padding: 16px;
+  }
+  .emp-grid-2,
+  .emp-grid-3,
+  .emp-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .emp-state-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .emp-reputation-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

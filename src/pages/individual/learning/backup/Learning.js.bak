@@ -1,0 +1,10 @@
+import { renderPlaceholder } from '../../../components/common/EmptyState.js';
+
+export function renderLearningPage() {
+  renderPlaceholder({
+    eyebrow: 'MY LEARNING',
+    title: 'Learning Workspace & Active Roadmaps',
+    description: 'Track your learning progress, completed modules, practice exercises, and verified skill badges.',
+    icon: 'book-open'
+  });
+}

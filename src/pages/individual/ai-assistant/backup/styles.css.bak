@@ -1,0 +1,16 @@
+/* TalentScope.ai Master Stylesheet (Modular Architecture) */
+@import url('./src/styles/variables.css');
+@import url('./src/styles/reset.css');
+@import url('./src/styles/global.css');
+@import url('./src/styles/layout.css');
+@import url('./src/styles/components.css');
+@import url('./src/styles/responsive.css');
+@import url('./src/styles/step3-modals.css');
+
+/* Page-Specific Styles */
+@import url('./src/pages/individual/home/home.css');
+@import url('./src/pages/individual/skills/skill-intelligence.css');
+@import url('./src/pages/individual/market/market-intelligence.css');
+@import url('./src/pages/individual/learning/learning.css');
+@import url('./src/pages/individual/career/career.css');
+@import url('./src/pages/individual/community/community.css');

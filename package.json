@@ -1,0 +1,13 @@
+{
+  "name": "talentscope-individual-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TalentScope.ai Individual Portal shell",
+  "scripts": {
+    "start": "serve . -l 3000"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.12.0",
+    "serve": "^14.2.4"
+  }
+}

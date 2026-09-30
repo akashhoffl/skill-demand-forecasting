@@ -1,0 +1,1379 @@
+/* ============================================================================
+   TALENTSCOPE.AI — COMPANY PORTAL MASTER STYLESHEET
+   Primary Accent: #874FFF (Strategic / Enterprise / Data-Driven)
+   Scoped strictly under .company-portal & .company-page
+   ============================================================================ */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES (Scoped to Company Portal)
+   -------------------------------------------------------------------------- */
+.company-portal {
+  --cmp-primary: #874FFF;
+  --cmp-deep-primary: #5B2BBF;
+  --cmp-dark: #3A1B88;
+  --cmp-light-primary: #F0E9FF;
+  --cmp-very-light: #F8F6FC;
+  --cmp-surface: #FFFFFF;
+  --cmp-soft-surface: #F7F3FF;
+  --cmp-background: #F8F6FC;
+  --cmp-border: #E6DEF7;
+  --cmp-border-subtle: #F0EAFB;
+  --cmp-border-accent: #D8C7FF;
+  --cmp-border-glass: rgba(135, 79, 255, 0.28);
+  --cmp-text-primary: #241B32;
+  --cmp-text-secondary: #70677C;
+  --cmp-text-muted: #9B93A8;
+  --cmp-success: #19B77A;
+  --cmp-warning: #F59E0B;
+  --cmp-danger: #E05252;
+  --cmp-info: #4DA3FF;
+  --cmp-shadow-card: 0 2px 10px rgba(58, 27, 136, 0.05);
+  --cmp-shadow-elevated: 0 10px 30px rgba(58, 27, 136, 0.10);
+  --cmp-shadow-glass: 0 12px 32px rgba(135, 79, 255, 0.15);
+  --cmp-radius-sm: 8px;
+  --cmp-radius-md: 12px;
+  --cmp-radius-lg: 16px;
+  --cmp-radius-xl: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   2. APP SHELL & SIDEBAR ADAPTATION IN COMPANY MODE (#874FFF)
+   -------------------------------------------------------------------------- */
+
+/* Sidebar Root Background & Depth */
+.company-portal .sidebar {
+  background: linear-gradient(180deg, #874FFF 0%, #6335C9 48%, #3A1B88 100%) !important;
+  color: rgba(255, 255, 255, 0.88);
+  box-shadow: 2px 0 18px rgba(58, 27, 136, 0.18);
+}
+
+/* Brand Name in Sidebar */
+.company-portal .sidebar .brand {
+  color: #FFFFFF;
+}
+
+.company-portal .sidebar.is-expanded .brand__name {
+  color: #FFFFFF !important;
+}
+
+.company-portal .sidebar .brand__name span {
+  color: #F0EAFF !important;
+  opacity: 0.95;
+}
+
+/* Sidebar Toggle Button */
+.company-portal .sidebar .sidebar__toggle {
+  color: #FFFFFF !important;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.company-portal .sidebar .sidebar__toggle:hover,
+.company-portal .sidebar .sidebar__toggle:focus-visible {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+
+.company-portal .sidebar:not(.is-expanded) .sidebar__toggle {
+  color: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.company-portal .sidebar:not(.is-expanded) .sidebar__toggle:hover,
+.company-portal .sidebar:not(.is-expanded) .sidebar__toggle:focus-visible {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.24) !important;
+}
+
+/* Section Headings */
+.company-portal .sidebar .nav-group__heading {
+  color: rgba(255, 255, 255, 0.70) !important;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+/* Navigation Items (Normal Inactive State) */
+.company-portal .sidebar .nav-item {
+  color: rgba(255, 255, 255, 0.88) !important;
+  border-radius: 11px;
+  transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.company-portal .sidebar .nav-item i,
+.company-portal .sidebar .nav-item svg {
+  color: rgba(255, 255, 255, 0.88) !important;
+  stroke: rgba(255, 255, 255, 0.88) !important;
+  transition: transform 180ms ease, stroke 180ms ease, color 180ms ease;
+}
+
+.company-portal .sidebar .nav-item .nav-item__label {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* Navigation Items Hover State */
+.company-portal .sidebar .nav-item:not(.is-active):hover,
+.company-portal .sidebar .nav-item:not(.is-active):focus-visible {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(58, 27, 136, 0.2);
+  outline: none;
+}
+
+.company-portal .sidebar .nav-item:not(.is-active):hover i,
+.company-portal .sidebar .nav-item:not(.is-active):hover svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  transform: translateX(1.5px);
+}
+
+.company-portal .sidebar .nav-item:not(.is-active):hover .nav-item__label {
+  color: #FFFFFF !important;
+}
+
+/* Navigation Items Active State (Clear Contrast: White Surface + Deep Indigo Text/Icon) */
+.company-portal .sidebar .nav-item.is-active,
+.company-portal .sidebar .nav-item[aria-current="page"] {
+  background: #FFFFFF !important;
+  color: #6335C9 !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 16px rgba(58, 27, 136, 0.25) !important;
+}
+
+.company-portal .sidebar .nav-item.is-active::before {
+  content: '';
+  width: 3.5px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  border-radius: 0 4px 4px 0;
+  background: #874FFF !important;
+}
+
+.company-portal .sidebar .nav-item.is-active i,
+.company-portal .sidebar .nav-item.is-active svg {
+  color: #6335C9 !important;
+  stroke: #6335C9 !important;
+}
+
+.company-portal .sidebar .nav-item.is-active .nav-item__label {
+  color: #6335C9 !important;
+  font-weight: 700 !important;
+}
+
+/* Collapsed Sidebar Tooltip */
+.company-portal .sidebar:not(.is-expanded) .nav-item[data-tooltip]::after {
+  color: #241B32 !important;
+  background: #FFFFFF !important;
+  border: 1px solid #D8C7FF !important;
+  box-shadow: 0 8px 24px rgba(58, 27, 136, 0.18) !important;
+  font-weight: 600;
+}
+
+/* Bottom Profile Area */
+.company-portal .sidebar .sidebar__bottom {
+  margin-top: auto;
+}
+
+.company-portal .sidebar .sidebar__profile {
+  border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+  transition: background 180ms ease;
+}
+
+.company-portal .sidebar .sidebar__profile:hover,
+.company-portal .sidebar .sidebar__profile:focus-within {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.company-portal .sidebar .sidebar__profile-copy strong {
+  color: #FFFFFF !important;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.company-portal .sidebar .sidebar__profile-copy small {
+  color: rgba(255, 255, 255, 0.70) !important;
+  font-size: 10px;
+}
+
+.company-portal .sidebar .sidebar__profile > i,
+.company-portal .sidebar .sidebar__profile > svg {
+  color: rgba(255, 255, 255, 0.75) !important;
+  stroke: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Avatars in Sidebar */
+.company-portal .sidebar .avatar {
+  background: #3A1B88 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(58, 27, 136, 0.25);
+}
+
+.company-portal .sidebar .avatar--small {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+/* Topbar Accents in Company Mode */
+.company-portal .topbar {
+  border-bottom: 1px solid var(--cmp-border);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.company-portal .topbar__context {
+  color: var(--cmp-deep-primary);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 13.5px;
+}
+
+.company-portal .search:focus-within {
+  border-color: var(--cmp-primary);
+  box-shadow: 0 0 0 3px rgba(135, 79, 255, 0.25);
+}
+
+.company-portal .button--assistant {
+  background: linear-gradient(135deg, var(--cmp-primary), var(--cmp-deep-primary)) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(135, 79, 255, 0.32) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.company-portal .button--assistant:hover {
+  background: var(--cmp-deep-primary) !important;
+  box-shadow: 0 6px 18px rgba(99, 53, 201, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+.company-portal .button--assistant:active {
+  transform: scale(0.98);
+}
+
+.company-portal .notification-button:hover,
+.company-portal .notification-button:focus-visible {
+  color: var(--cmp-deep-primary) !important;
+  background: var(--cmp-light-primary) !important;
+  outline: none;
+}
+
+.company-portal .notification-dot {
+  background: var(--cmp-primary) !important;
+}
+
+.company-portal .profile-trigger:hover,
+.company-portal .profile-trigger:focus-visible {
+  background: var(--cmp-light-primary) !important;
+  outline: none;
+}
+
+.company-portal .profile-popover a:hover,
+.company-portal .profile-popover button:hover {
+  background: var(--cmp-light-primary) !important;
+  color: var(--cmp-dark) !important;
+}
+
+.company-portal .portal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--cmp-light-primary);
+  color: var(--cmp-deep-primary);
+  border: 1px solid var(--cmp-border-accent);
+  margin-left: 8px;
+}
+
+.company-portal .portal-badge i,
+.company-portal .portal-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   3. UNIFIED GLOBAL COMPANY BUTTON SYSTEM (Section 5)
+   ALL primary buttons use #874FFF with white text.
+   Secondary buttons use light #874FFF-tinted surface (#F0EAFF) with #6335C9 text.
+   Ghost buttons use #6335C9 text.
+   -------------------------------------------------------------------------- */
+.cmp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: var(--cmp-radius-md);
+  background: var(--cmp-primary);
+  color: #FFFFFF !important;
+  font-size: 13.5px;
+  font-weight: 750;
+  border: 1px solid rgba(99, 53, 201, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 3px 12px rgba(135, 79, 255, 0.28);
+  line-height: 1;
+}
+
+.cmp-btn-primary:hover {
+  background: var(--cmp-deep-primary);
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 18px rgba(99, 53, 201, 0.36);
+  transform: translateY(-1px);
+}
+
+.cmp-btn-primary:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(99, 53, 201, 0.25);
+}
+
+.cmp-btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(135, 79, 255, 0.45);
+}
+
+.cmp-btn-primary i,
+.cmp-btn-primary svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+.cmp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--cmp-radius-md);
+  background: var(--cmp-light-primary);
+  color: var(--cmp-deep-primary);
+  font-size: 13.5px;
+  font-weight: 700;
+  border: 1px solid var(--cmp-border-accent);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.cmp-btn-secondary:hover {
+  background: #E5DAFF;
+  color: var(--cmp-dark);
+  border-color: var(--cmp-primary);
+  transform: translateY(-1px);
+}
+
+.cmp-btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.cmp-btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(135, 79, 255, 0.35);
+}
+
+.cmp-btn-secondary i,
+.cmp-btn-secondary svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.cmp-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: var(--cmp-radius-sm);
+  background: transparent;
+  color: var(--cmp-deep-primary);
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.16s ease;
+  line-height: 1;
+}
+
+.cmp-btn-ghost:hover {
+  background: var(--cmp-light-primary);
+  color: var(--cmp-dark);
+}
+
+.cmp-btn-ghost:active {
+  transform: scale(0.98);
+}
+
+.cmp-btn-ghost:focus-visible {
+  outline: none;
+  background: var(--cmp-light-primary);
+}
+
+.cmp-btn-ghost i,
+.cmp-btn-ghost svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. CARDS & TYPOGRAPHY HIERARCHY (Section 6 & Section 21)
+   -------------------------------------------------------------------------- */
+.cmp-card {
+  background: var(--cmp-surface);
+  border: 1px solid var(--cmp-border);
+  border-radius: var(--cmp-radius-lg);
+  padding: 24px;
+  box-shadow: var(--cmp-shadow-card);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.cmp-card:hover {
+  box-shadow: var(--cmp-shadow-elevated);
+}
+
+.cmp-card--glass {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--cmp-border-glass);
+  box-shadow: var(--cmp-shadow-glass);
+}
+
+.cmp-card--accent-purple::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cmp-primary), var(--cmp-deep-primary));
+  border-radius: var(--cmp-radius-lg) var(--cmp-radius-lg) 0 0;
+}
+
+/* Eyebrows & Headings */
+.cmp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cmp-deep-primary);
+  margin-bottom: 4px;
+}
+
+.cmp-eyebrow i,
+.cmp-eyebrow svg {
+  width: 13px;
+  height: 13px;
+  color: var(--cmp-primary);
+}
+
+.cmp-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--cmp-text-primary);
+  margin: 0 0 4px;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.cmp-subtitle {
+  font-size: 13.5px;
+  color: var(--cmp-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Page Layout */
+.company-page {
+  padding: 28px 32px 64px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  animation: cmpFadeIn 0.25s ease-out both;
+}
+
+@keyframes cmpFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   5. COMPANY HERO (Section 10 Header)
+   -------------------------------------------------------------------------- */
+.cmp-hero {
+  background: linear-gradient(135deg, rgba(240, 234, 255, 0.8), rgba(248, 246, 255, 0.95)), var(--cmp-surface);
+  border: 1px solid var(--cmp-border);
+  border-radius: var(--cmp-radius-xl);
+  padding: 26px 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--cmp-shadow-card);
+}
+
+.cmp-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cmp-primary), var(--cmp-deep-primary), #19B77A);
+}
+
+.cmp-hero__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cmp-hero__greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cmp-hero__greeting h1 {
+  font-size: 26px;
+  font-weight: 850;
+  color: var(--cmp-text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.cmp-hero__greeting p {
+  font-size: 14px;
+  color: var(--cmp-text-secondary);
+  margin: 0;
+  max-width: 680px;
+}
+
+.cmp-hero__context-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--cmp-border-glass);
+  backdrop-filter: blur(12px);
+  padding: 12px 18px;
+  border-radius: var(--cmp-radius-md);
+  box-shadow: 0 8px 24px rgba(58, 27, 136, 0.08);
+}
+
+.cmp-hero__company-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--cmp-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  box-shadow: 0 4px 12px rgba(135, 79, 255, 0.28);
+}
+
+.cmp-hero__context-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cmp-hero__context-info strong {
+  font-size: 14.5px;
+  color: var(--cmp-text-primary);
+  font-weight: 750;
+}
+
+.cmp-hero__context-info span {
+  font-size: 12px;
+  color: var(--cmp-text-secondary);
+}
+
+.cmp-hero__context-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--cmp-text-muted);
+}
+
+.cmp-hero__context-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   6. WORKFORCE INTELLIGENCE OVERVIEW (Section 10 Overview Cards)
+   -------------------------------------------------------------------------- */
+.cmp-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+.cmp-metric-card {
+  background: var(--cmp-surface);
+  border: 1px solid var(--cmp-border);
+  border-radius: var(--cmp-radius-lg);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--cmp-shadow-card);
+  position: relative;
+}
+
+.cmp-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cmp-shadow-elevated);
+  border-color: var(--cmp-primary);
+}
+
+.cmp-metric-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cmp-metric-card__label {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cmp-text-muted);
+}
+
+.cmp-metric-card__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cmp-light-primary);
+  color: var(--cmp-deep-primary);
+}
+
+.cmp-metric-card__icon i,
+.cmp-metric-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.cmp-metric-card__value {
+  font-size: 22px;
+  font-weight: 850;
+  color: var(--cmp-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cmp-metric-card__headline {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cmp-dark);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cmp-metric-card__summary {
+  font-size: 11.5px;
+  color: var(--cmp-text-secondary);
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+}
+
+.cmp-metric-card__footer {
+  padding-top: 8px;
+  border-top: 1px solid var(--cmp-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cmp-metric-card__link {
+  font-size: 12px;
+  font-weight: 750;
+  color: var(--cmp-deep-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.cmp-metric-card__link:hover {
+  color: var(--cmp-dark);
+  transform: translateX(1px);
+}
+
+.cmp-metric-card__link i,
+.cmp-metric-card__link svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Badges */
+.cmp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.cmp-badge--success {
+  background: #E8F8F1;
+  color: #0E784F;
+  border: 1px solid rgba(25, 183, 122, 0.25);
+}
+
+.cmp-badge--danger {
+  background: #FDEDEC;
+  color: #C0392B;
+  border: 1px solid rgba(224, 82, 82, 0.25);
+}
+
+.cmp-badge--attention {
+  background: #FEF3C7;
+  color: #B45309;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+
+.cmp-badge--neutral {
+  background: var(--cmp-light-primary);
+  color: var(--cmp-deep-primary);
+  border: 1px solid var(--cmp-border-accent);
+}
+
+/* --------------------------------------------------------------------------
+   7. WHAT CHANGED (Section 10 Strategic Signals)
+   -------------------------------------------------------------------------- */
+.cmp-signals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.cmp-signal-item {
+  background: var(--cmp-surface);
+  border: 1px solid var(--cmp-border);
+  border-radius: var(--cmp-radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--cmp-shadow-card);
+  transition: all 0.2s ease;
+}
+
+.cmp-signal-item:hover {
+  border-color: var(--cmp-primary);
+  box-shadow: var(--cmp-shadow-elevated);
+}
+
+.cmp-signal-item__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cmp-signal-item__cat {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--cmp-deep-primary);
+  letter-spacing: 0.08em;
+}
+
+.cmp-signal-item__title {
+  font-size: 15px;
+  font-weight: 750;
+  color: var(--cmp-text-primary);
+  margin: 3px 0 0;
+  line-height: 1.3;
+}
+
+.cmp-signal-item__why {
+  background: var(--cmp-soft-surface);
+  border-left: 3px solid var(--cmp-primary);
+  padding: 9px 12px;
+  border-radius: 0 var(--cmp-radius-sm) var(--cmp-radius-sm) 0;
+  font-size: 12.5px;
+  color: var(--cmp-dark);
+  line-height: 1.45;
+}
+
+.cmp-signal-details {
+  border: 1px solid var(--cmp-border-subtle);
+  border-radius: var(--cmp-radius-sm);
+  background: #FCFAFF;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.cmp-signal-details summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--cmp-deep-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.cmp-signal-details summary:hover {
+  color: var(--cmp-dark);
+}
+
+.cmp-signal-details[open] summary {
+  margin-bottom: 8px;
+  border-bottom: 1px dashed var(--cmp-border);
+  padding-bottom: 6px;
+}
+
+.cmp-signal-details-content {
+  font-size: 12px;
+  color: var(--cmp-text-secondary);
+  line-height: 1.45;
+}
+
+.cmp-signal-item__meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.cmp-signal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #F1EDFA;
+  color: #4A3E61;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.cmp-signal-tag--skill {
+  background: var(--cmp-light-primary);
+  color: var(--cmp-deep-primary);
+  border: 1px solid var(--cmp-border-accent);
+}
+
+/* --------------------------------------------------------------------------
+   8. CRITICAL SKILL GAPS TABLE (Section 10 & 13)
+   -------------------------------------------------------------------------- */
+.cmp-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--cmp-border);
+  border-radius: var(--cmp-radius-lg);
+  background: var(--cmp-surface);
+  box-shadow: var(--cmp-shadow-card);
+}
+
+.cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.cmp-table th {
+  background: var(--cmp-soft-surface);
+  padding: 11px 16px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--cmp-text-muted);
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--cmp-border);
+  white-space: nowrap;
+}
+
+.cmp-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--cmp-border-subtle);
+  vertical-align: middle;
+}
+
+.cmp-table tr:last-child td {
+  border-bottom: none;
+}
+
+.cmp-table tr:hover td {
+  background: var(--cmp-very-light);
+}
+
+.cmp-skill-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cmp-skill-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--cmp-light-primary);
+  color: var(--cmp-deep-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cmp-skill-icon-box i,
+.cmp-skill-icon-box svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Coverage vs Demand Dual Bar */
+.cmp-dual-bar-wrap {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cmp-dual-bar-track {
+  position: relative;
+  height: 8px;
+  background: #EDE6FA;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cmp-dual-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--cmp-primary), var(--cmp-deep-primary));
+  transition: width 0.4s ease;
+}
+
+.cmp-dual-bar-fill--gap {
+  background: linear-gradient(90deg, var(--cmp-warning), #EA580C);
+}
+
+/* --------------------------------------------------------------------------
+   9. RECOMMENDED ACTIONS SECTION (Section 10 Prioritized Actions)
+   -------------------------------------------------------------------------- */
+.cmp-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cmp-action-card {
+  background: var(--cmp-surface);
+  border: 1px solid var(--cmp-border);
+  border-radius: var(--cmp-radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  box-shadow: var(--cmp-shadow-card);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.cmp-action-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--cmp-primary);
+  box-shadow: var(--cmp-shadow-elevated);
+}
+
+.cmp-action-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cmp-action-type-pill {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cmp-action-type-pill--upskill {
+  background: #E8F8F1;
+  color: #0E784F;
+  border: 1px solid rgba(25, 183, 122, 0.25);
+}
+
+.cmp-action-type-pill--redeploy {
+  background: var(--cmp-light-primary);
+  color: var(--cmp-deep-primary);
+  border: 1px solid var(--cmp-border-accent);
+}
+
+.cmp-action-type-pill--hire {
+  background: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.cmp-action-type-pill--reskill {
+  background: #FEF3C7;
+  color: #B45309;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.cmp-action-type-pill--monitor {
+  background: #F3F4F6;
+  color: #4B5563;
+  border: 1px solid #E5E7EB;
+}
+
+.cmp-action-card__title {
+  font-size: 15px;
+  font-weight: 750;
+  color: var(--cmp-text-primary);
+  margin: 4px 0 0;
+  line-height: 1.35;
+}
+
+.cmp-action-card__reason {
+  font-size: 12.5px;
+  color: var(--cmp-text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.cmp-action-card__impact {
+  background: var(--cmp-soft-surface);
+  border-left: 3px solid var(--cmp-primary);
+  padding: 8px 10px;
+  border-radius: 0 6px 6px 0;
+  font-size: 11.5px;
+  color: var(--cmp-dark);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   10. WORKFORCE FORECAST TIMELINE (Section 11)
+   -------------------------------------------------------------------------- */
+.cmp-forecast-tabs {
+  display: flex;
+  gap: 8px;
+  background: var(--cmp-soft-surface);
+  padding: 4px;
+  border-radius: var(--cmp-radius-md);
+  border: 1px solid var(--cmp-border);
+  width: fit-content;
+}
+
+.cmp-forecast-tab {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cmp-text-secondary);
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.cmp-forecast-tab.is-active {
+  background: #FFFFFF;
+  color: var(--cmp-deep-primary);
+  box-shadow: 0 2px 8px rgba(58, 27, 136, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   11. SCENARIO SIMULATION WORKSPACE (Section 15)
+   -------------------------------------------------------------------------- */
+.cmp-sim-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.cmp-sim-scenario-btn {
+  width: 100%;
+  text-align: left;
+  padding: 14px;
+  border-radius: var(--cmp-radius-md);
+  border: 1px solid var(--cmp-border);
+  background: var(--cmp-surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cmp-sim-scenario-btn:hover {
+  border-color: var(--cmp-primary);
+  background: var(--cmp-soft-surface);
+}
+
+.cmp-sim-scenario-btn.is-active {
+  border-color: var(--cmp-primary);
+  background: var(--cmp-light-primary);
+  box-shadow: 0 4px 14px rgba(135, 79, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   12. COMPANY AI ASSISTANT (Section 17 & 21)
+   -------------------------------------------------------------------------- */
+.cmp-ai-analysis-box {
+  background: var(--cmp-soft-surface);
+  border: 1px solid var(--cmp-border-accent);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: cmpFadeIn 0.2s ease-out both;
+}
+
+.cmp-ai-analysis-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cmp-deep-primary);
+}
+
+.cmp-ai-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--cmp-border-accent);
+  border-top-color: var(--cmp-deep-primary);
+  border-radius: 50%;
+  animation: cmpSpin 0.7s linear infinite;
+}
+
+@keyframes cmpSpin {
+  to { transform: rotate(360deg); }
+}
+
+.cmp-ai-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cmp-ai-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--cmp-text-muted);
+  transition: all 0.2s ease;
+}
+
+.cmp-ai-step.is-active {
+  color: var(--cmp-dark);
+  font-weight: 700;
+}
+
+.cmp-ai-step.is-done {
+  color: var(--cmp-success);
+  font-weight: 600;
+}
+
+.cmp-ai-step.is-done i,
+.cmp-ai-step.is-done svg {
+  color: var(--cmp-success);
+}
+
+/* --------------------------------------------------------------------------
+/* --------------------------------------------------------------------------
+   13. UNIFIED MODAL SYSTEM (Sections 28 & 29)
+   Centered, max-height calc(100vh - 48px), overlay rgba(20, 10, 40, 0.45) + blur
+   -------------------------------------------------------------------------- */
+.cmp-modal-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 10, 40, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: cmpFadeIn 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cmp-modal-dialog {
+  background: #FFFFFF;
+  border: 1px solid var(--cmp-border-glass);
+  border-radius: 20px;
+  box-shadow: 0 24px 64px rgba(58, 27, 136, 0.24);
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: cmpModalPop 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cmpModalPop {
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes cmpFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cmp-modal-scrim,
+  .cmp-modal-dialog {
+    animation: none !important;
+  }
+}
+
+/* Equal Panel System (Section 32) */
+.cmp-equal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .cmp-equal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Icon Sizing Rules (Section 25) */
+.cmp-icon-nav { width: 18px; height: 18px; }
+.cmp-icon-inline { width: 14px; height: 14px; vertical-align: middle; }
+.cmp-icon-btn { width: 16px; height: 16px; }
+.cmp-icon-section { width: 20px; height: 20px; }
+.cmp-icon-hero { width: 22px; height: 22px; }
+
+.cmp-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--cmp-border);
+  padding-bottom: 14px;
+}
+
+.cmp-modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--cmp-text-primary);
+  margin: 0;
+}
+
+.cmp-modal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--cmp-very-light);
+  border: none;
+  color: var(--cmp-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cmp-modal-close-btn:hover {
+  background: var(--cmp-light-primary);
+  color: var(--cmp-dark);
+}
+
+/* --------------------------------------------------------------------------
+   14. RESPONSIVE MEDIA QUERIES (Section 24)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .cmp-overview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cmp-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cmp-sim-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .company-page {
+    padding: 20px 16px 48px;
+    gap: 20px;
+  }
+  .cmp-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cmp-signals-grid {
+    grid-template-columns: 1fr;
+  }
+  .cmp-actions-grid {
+    grid-template-columns: 1fr;
+  }
+  .cmp-hero__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 540px) {
+  .cmp-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}

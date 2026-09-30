@@ -1,0 +1,9 @@
+.eyebrow { color: var(--purple); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.v2-kicker { display: inline-block; color: var(--purple); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px; }
+.badge { padding: 4px 7px; color: var(--purple); background: var(--soft-purple); border-radius: 5px; font-size: 10px; font-weight: 700; }
+[hidden] { display: none !important; }
+
+.main-content { flex: 1; padding: 42px 48px; background: var(--page); outline: none; }
+.page-header { max-width: 1040px; margin: 0 auto 28px; }
+.page-header h1 { margin: 8px 0 8px; font: 600 clamp(26px, 3vw, 36px) 'DM Sans', sans-serif; letter-spacing: -.03em; }
+.page-header p { max-width: 520px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }

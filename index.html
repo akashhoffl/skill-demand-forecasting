@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TalentScope.ai individual workforce intelligence portal">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <title>TalentScope.ai — Individual Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css?v=ts-final-stabilized">
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <div class="mobile-scrim" id="mobileScrim" aria-hidden="true"></div>
+    <aside class="sidebar" id="sidebar" aria-label="Individual portal navigation">
+      <div class="sidebar__inner">
+        <div class="sidebar__top">
+          <a class="brand" href="#/individual/home" aria-label="TalentScope.ai home">
+            <span class="brand__mark" aria-hidden="true"><img src="assets/logo.png" alt=""></span>
+            <span class="brand__name">TalentScope<span>.ai</span></span>
+          </a>
+          <button class="icon-button sidebar__toggle" id="sidebarToggle" type="button" aria-label="Expand sidebar" aria-expanded="false" title="Expand sidebar">
+            <i data-lucide="panel-left"></i>
+          </button>
+        </div>
+        <nav class="sidebar__nav" id="primaryNav"></nav>
+        <div class="sidebar__bottom">
+          <a class="nav-item" href="#/individual/profile" data-route="/individual/profile" data-tooltip="Profile">
+            <span class="avatar avatar--small" data-user-initials></span><span class="nav-item__label">Profile</span>
+          </a>
+          <a class="nav-item" href="#/individual/settings" data-route="/individual/settings" data-tooltip="Settings">
+            <i data-lucide="settings-2"></i><span class="nav-item__label">Settings</span>
+          </a>
+          <a class="sidebar__profile" href="#/individual/profile" aria-label="Open Profile" style="text-decoration: none;">
+            <span class="avatar" data-user-initials></span>
+            <span class="sidebar__profile-copy"><strong data-user-name></strong><small data-user-meta></small></span>
+            <i data-lucide="more-horizontal"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <div class="topbar__mobile-start">
+          <button class="icon-button topbar__menu" id="mobileMenu" type="button" aria-label="Open navigation" title="Open navigation">
+            <i data-lucide="menu"></i>
+          </button>
+          <span class="mobile-brand">TalentScope.ai</span>
+        </div>
+        <div class="topbar__context" id="topbarContext" aria-live="polite"></div>
+        <form class="search" role="search" id="searchForm">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input id="searchInput" type="search" placeholder="Search skills, roles, companies..." aria-label="Search skills, roles, companies">
+          <kbd>⌘ K</kbd>
+        </form>
+        <div class="topbar__actions">
+          <a class="button button--assistant" href="#/individual/ai-assistant"><i data-lucide="sparkles"></i><span>AI Assistant</span></a>
+          <button class="icon-button notification-button" id="notificationButton" type="button" aria-label="Notifications" aria-expanded="false" title="Notifications">
+            <i data-lucide="bell"></i><span class="notification-dot" aria-hidden="true"></span>
+          </button>
+          <div class="profile-menu">
+            <button class="profile-trigger" id="profileTrigger" type="button" aria-expanded="false" aria-haspopup="true">
+              <span class="avatar" data-user-initials></span><span class="profile-trigger__copy"><strong data-user-short-name></strong><small data-user-meta></small></span><i data-lucide="chevron-down"></i>
+            </button>
+            <div class="popover profile-popover" id="profilePopover" role="menu" hidden>
+              <a href="#/individual/profile" role="menuitem"><i data-lucide="user-round"></i>Profile</a>
+              <a href="#/individual/settings" role="menuitem"><i data-lucide="settings-2"></i>Settings</a>
+              <a href="#/individual/home" role="menuitem"><i data-lucide="circle-help"></i>Help</a>
+              <hr>
+              <button type="button" role="menuitem" data-action="sign-out"><i data-lucide="log-out"></i>Sign out</button>
+            </div>
+          </div>
+        </div>
+        <div class="popover notification-popover" id="notificationPopover" hidden>
+          <div class="popover__heading"><strong>Notifications</strong><span class="badge">3 new</span></div>
+          <div class="notification-item"><span class="notification-icon"><i data-lucide="trending-up"></i></span><span><strong>New market signal</strong><small>Data engineering demand is rising.</small></span></div>
+          <div class="notification-item"><span class="notification-icon"><i data-lucide="book-open"></i></span><span><strong>Learning streak</strong><small>You are on a 4 day streak.</small></span></div>
+          <a class="popover__footer" href="#/individual/notifications">View all notifications <i data-lucide="arrow-up-right"></i></a>
+        </div>
+      </header>
+      <main class="main-content" id="mainContent" tabindex="-1"></main>
+    </div>
+  </div>
+  <script src="src/app/app.js"></script>
+</body>
+</html>

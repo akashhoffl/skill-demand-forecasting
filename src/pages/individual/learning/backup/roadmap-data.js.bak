@@ -1,0 +1,33 @@
+export const roadmapStorageKey = 'talentscope-roadmap-state-v1';
+
+export function createRoadmapStages() {
+  return [
+    { title: 'Core Foundations', desc: 'Master fundamentals and essential paradigms', milestones: ['Setup environment and foundational syntax', 'Complete core algorithmic concepts', 'Build baseline console application'] },
+    { title: 'Advanced Concepts', desc: 'Deep-dive into architecture, patterns, and performance', milestones: ['Master asynchronous pipelines and data structures', 'Implement production error handling', 'Optimize runtime performance benchmarks'] },
+    { title: 'Practical Integration', desc: 'Apply knowledge to end-to-end production systems', milestones: ['Integrate rest/graphql API endpoints', 'Build automated unit and integration tests', 'Deploy containerized service to cloud sandbox'] }
+  ];
+}
+
+export let roadmapState = {
+  status: 'preview',
+  skill: 'Python',
+  title: 'Python — Skill Advancement',
+  progress: 33,
+  stages: createRoadmapStages()
+};
+
+export function loadRoadmapState() {
+  const saved = localStorage.getItem(roadmapStorageKey);
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      roadmapState = { ...roadmapState, ...parsed };
+    } catch (e) {
+      console.warn('Failed to parse saved roadmap state:', e);
+    }
+  }
+}
+
+export function persistRoadmapState() {
+  localStorage.setItem(roadmapStorageKey, JSON.stringify(roadmapState));
+}
